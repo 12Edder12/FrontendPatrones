@@ -1,6 +1,25 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+// src/pages/_app.tsx
+import '../styles/globals.css';
+import { AuthProvider } from '../context/AuthContext';
+import ProtectedRoute from '../components/admin/ProtectedRoute';
+import { useRouter } from 'next/router';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+const noAuthRequired = ['/login'];
+
+function MyApp({ Component, pageProps }: any) {
+  const router = useRouter();
+
+  return (
+    <AuthProvider>
+      {noAuthRequired.includes(router.pathname) ? (
+        <Component {...pageProps} />
+      ) : (
+        <ProtectedRoute>
+          <Component {...pageProps} />
+        </ProtectedRoute>
+      )}
+    </AuthProvider>
+  );
 }
+
+export default MyApp;
