@@ -102,12 +102,14 @@ const Navbar = () => {
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
-    <nav className="bg-gray-900 text-white p-3">
-      <button onClick={toggleModal} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Edit User
-      </button>
-      <Modal isOpen={isModalOpen} onClose={toggleModal} />
-    </nav>
+    <nav className="bg-gray-900 text-white p-3 flex justify-between">
+    <div></div> {/* Esto es para empujar el botón hacia la derecha */}
+    <button onClick={toggleModal} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Edit User
+    </button>
+    <Modal isOpen={isModalOpen} onClose={toggleModal} />
+  </nav>
+  
   );
 };
 

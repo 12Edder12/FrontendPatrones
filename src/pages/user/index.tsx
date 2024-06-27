@@ -29,36 +29,14 @@ const UserPage = () => {
           Welcome User - Menu
         </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl">
-
-        <Link href="/user/">
-          <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
-            Manage Users
-          </div>
-        </Link>
-        <Link href="/admin/assign-roles">
-          <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
-            Assign Roles
-          </div>
-        </Link>
-        <Link href="/admin/manage-servers">
-          <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
-            Manage Servers
-          </div>
-        </Link>
+      <Link href="/user/templates">
         <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
-          <Link href="/admin/manage-templates">
           Manage Templates
-          </Link>
         </div>
-        <Link href="/user/reporter">
-          <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
-            Create Reports
-          </div>
         </Link>
         <div
           className="bg-gradient-to-r from-red-500 to-red-700 border border-red-600 rounded-lg p-6 text-center text-white cursor-pointer transition-transform transform hover:scale-105"
-          onClick={handleLogout}
-        >
+          onClick={handleLogout} >
           Logout
         </div>
       </div>
