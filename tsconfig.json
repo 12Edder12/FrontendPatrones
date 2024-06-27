@@ -14,8 +14,9 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
-  },
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types/pdf.d.ts"], 
+  }, 
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
