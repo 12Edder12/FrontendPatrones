@@ -95,26 +95,9 @@ const Login = () => {
               </button>
             </div>
           </div>
-          <div className="flex items-center mb-4">
-            <input
-              id="remember_me"
-              type="checkbox"
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded font-serif"
-            />
-            <label
-              htmlFor="remember_me"
-              className="ml-2 block text-sm text-gray-900 font-serif"
-            >
-              Remember me
-            </label>
-          </div>
+          
           <div className="text-sm">
-            <a
-              href="#"
-              className="text-blue-600 hover:underline font-serif text-sm"
-            >
-              Forgot your password?
-            </a>
+
           </div>
           <div>
             <button
@@ -123,15 +106,6 @@ const Login = () => {
             >
               LOGIN
             </button>
-            <p className="mt-4 text-center text-gray-600 font-serif text-xs">
-              Don't have an account?{" "}
-              <a
-                href="#"
-                className="font-bold text-blue-600 hover:underline font-serif text-xs"
-              >
-                Sign Up
-              </a>
-            </p>
           </div>
         </form>
       </div>

@@ -2,7 +2,8 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
- 
+import Login from './login'; // Importa el componente de login
+
 const HomePage = () => {
   const { user } = useAuth();
   const router = useRouter();
@@ -14,12 +15,14 @@ const HomePage = () => {
       } else {
         router.push('/user');
       }
-    } else {
-      router.push('/login');
     }
   }, [user, router]);
 
-  return <div>Loading...</div>;
+  if (!user) {
+    return <Login />; // Muestra el componente de login si no hay usuario
+  }
+
+  return <div>Loading...</div>; // Muestra un mensaje de carga mientras se redirige
 };
 
 export default HomePage;
