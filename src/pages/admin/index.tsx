@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Cookies from "js-cookie";
+import Navbar from "../../components/user/Navbar"; 
 
 const AdminPage = () => {
   const { user } = useAuth();
@@ -21,32 +22,32 @@ const AdminPage = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-white">
-      <h1 className="text-4xl font-bold text-purple-700 mb-10">Admin Menu</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl">
+    <div className="flex flex-col h-screen">
+      <Navbar/>
+      <div className="flex flex-col items-center justify-center bg-white flex-grow">
+      <h1 className="text-4xl font-bold text-purple-700 mb-10">
+          Welcome Admin - Menu
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl">
+  
         <Link href="/admin/users">
           <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
             Manage Users
           </div>
         </Link>
-        <Link href="/admin/assign-roles">
+        <Link href="/admin/roles">
           <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
             Assign Roles
           </div>
         </Link>
-        <Link href="/admin/manage-servers">
+        <Link href="/admin/servers">
           <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
             Manage Servers
           </div>
         </Link>
-        <Link href="/admin/manage-templates">
+        <Link href="/admin/templates">
           <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
             Manage Templates
-          </div>
-        </Link>
-        <Link href="/admin/create-reports">
-          <div className="bg-gradient-to-r from-blue-400 to-purple-500 border border-gray-300 rounded-lg p-6 text-center text-white transition-transform transform hover:scale-105">
-            Create Reports
           </div>
         </Link>
         <div
@@ -56,6 +57,7 @@ const AdminPage = () => {
           Logout
         </div>
       </div>
+    </div>
     </div>
   );
 };

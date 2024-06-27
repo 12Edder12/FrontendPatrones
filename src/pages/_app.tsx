@@ -4,7 +4,7 @@ import { AuthProvider } from '../context/AuthContext';
 import ProtectedRoute from '../components/admin/ProtectedRoute';
 import { useRouter } from 'next/router';
 
-const noAuthRequired = ['/login'];
+const noAuthRequired = ['/login', '/']; // Incluye la ruta raíz
 
 function MyApp({ Component, pageProps }: any) {
   const router = useRouter();
